@@ -546,7 +546,7 @@ const Checkout = ({shipStateData, isLoading, currentLanguageCode, merchant, stri
           "paymentType": "CREDITCARD",
           "transactionType": "CAPTURE",
           "paymentModule": "stripe",
-          "paymentToken": result.token,
+          "paymentToken": result,
           "amount": shippingQuote[shippingQuote.length - 1].value
         }
       }
@@ -609,13 +609,13 @@ const Checkout = ({shipStateData, isLoading, currentLanguageCode, merchant, stri
           "paymentType": "CREDITCARD",
           "transactionType": "CAPTURE",
           "paymentModule": "stripe",
-          "paymentToken": result.token,
+          "paymentToken": result,
           "amount": shippingQuote[shippingQuote.length - 1].value
         },
         "customer": customer
       }
     }
-    // console.log(param);
+    console.log(param);
     // 
     try {
       let response = await WebService.post(action, param);
